@@ -1,0 +1,190 @@
+// Add new custom font to Font Family selection in icon box module
+	function bon_add_flaticon( ) {
+		$param = WPBMap::getParam( 'vc_icon', 'type' );
+		$param['value'][__( 'Flaticon', 'bon' )] = 'flaticon';
+		vc_update_shortcode_param( 'vc_icon', $param );
+	}
+	add_filter( 'init', 'bon_add_flaticon', 40 );
+	// Add font picker setting to icon box module when you select your font family from the dropdown
+	function bon_add_font_flaticon_picker() {
+		vc_add_param( 'vc_icon', array(
+				'type' => 'iconpicker',
+				'weight' => 1,
+				'heading' => esc_html__( 'Icon', 'bon' ),
+				'param_name' => 'icon_flaticon',
+				'settings' => array(
+					'emptyIcon' => false,
+					'type' => 'flaticon',
+					'iconsPerPage' => 200,
+				),
+				'dependency' => array(
+					'element' => 'type',
+					'value' => 'flaticon',
+				),
+			)
+		);
+	}
+	add_filter( 'vc_after_init', 'bon_add_font_flaticon_picker', 40 );
+	function bon_flaticonicon_array() {
+		return array(
+		array('flaticon-align' => 'align'),
+		array('flaticon-align-1' => 'align-1'),
+		array('flaticon-anchor' => 'anchor'),
+		array('flaticon-background' => 'background'),
+		array('flaticon-background-1' => 'background-1'),
+		array('flaticon-background-2' => 'background-2'),
+		array('flaticon-bounding-box' => 'bounding-box'),
+		array('flaticon-brush' => 'brush'),
+		array('flaticon-bucket' => 'bucket'),
+		array('flaticon-bucket-1' => 'bucket-1'),
+		array('flaticon-center-align' => 'center-align'),
+		array('flaticon-center-alignment' => 'center-alignment'),
+		array('flaticon-center-alignment-1' => 'center-alignment-1'),
+		array('flaticon-circle' => 'circle'),
+		array('flaticon-circular' => 'circular'),
+		array('flaticon-column' => 'column'),
+		array('flaticon-cone' => 'cone'),
+		array('flaticon-constraint' => 'constraint'),
+		array('flaticon-coordinates' => 'coordinates'),
+		array('flaticon-crop' => 'crop'),
+		array('flaticon-crop-1' => 'crop-1'),
+		array('flaticon-cube' => 'cube'),
+		array('flaticon-cube-1' => 'cube-1'),
+		array('flaticon-cube-2' => 'cube-2'),
+		array('flaticon-cube-3' => 'cube-3'),
+		array('flaticon-cube-4' => 'cube-4'),
+		array('flaticon-cube-5' => 'cube-5'),
+		array('flaticon-cursor' => 'cursor'),
+		array('flaticon-cursor-1' => 'cursor-1'),
+		array('flaticon-cursor-2' => 'cursor-2'),
+		array('flaticon-cylinder' => 'cylinder'),
+		array('flaticon-distort' => 'distort'),
+		array('flaticon-distort-1' => 'distort-1'),
+		array('flaticon-divide' => 'divide'),
+		array('flaticon-edit' => 'edit'),
+		array('flaticon-edit-1' => 'edit-1'),
+		array('flaticon-edit-2' => 'edit-2'),
+		array('flaticon-edit-3' => 'edit-3'),
+		array('flaticon-edit-4' => 'edit-4'),
+		array('flaticon-edit-corner' => 'edit-corner'),
+		array('flaticon-exclude' => 'exclude'),
+		array('flaticon-eyedropper' => 'eyedropper'),
+		array('flaticon-eyedropper-1' => 'eyedropper-1'),
+		array('flaticon-flatten' => 'flatten'),
+		array('flaticon-flip' => 'flip'),
+		array('flaticon-flip-1' => 'flip-1'),
+		array('flaticon-foreground' => 'foreground'),
+		array('flaticon-grids' => 'grids'),
+		array('flaticon-group' => 'group'),
+		array('flaticon-intersection' => 'intersection'),
+		array('flaticon-joint' => 'joint'),
+		array('flaticon-left-alignment' => 'left-alignment'),
+		array('flaticon-left-alignment-1' => 'left-alignment-1'),
+		array('flaticon-left-alignment-2' => 'left-alignment-2'),
+		array('flaticon-merge' => 'merge'),
+		array('flaticon-mirror-horizontally' => 'mirror-horizontally'),
+		array('flaticon-mirror-horizontally-1' => 'mirror-horizontally-1'),
+		array('flaticon-outline' => 'outline'),
+		array('flaticon-oval' => 'oval'),
+		array('flaticon-oval-1' => 'oval-1'),
+		array('flaticon-oval-2' => 'oval-2'),
+		array('flaticon-paint-palette' => 'paint-palette'),
+		array('flaticon-pen' => 'pen'),
+		array('flaticon-pen-1' => 'pen-1'),
+		array('flaticon-perspective' => 'perspective'),
+		array('flaticon-polygon' => 'polygon'),
+		array('flaticon-right-alignment' => 'right-alignment'),
+		array('flaticon-right-alignment-1' => 'right-alignment-1'),
+		array('flaticon-right-alignment-2' => 'right-alignment-2'),
+		array('flaticon-rotate' => 'rotate'),
+		array('flaticon-rotate-1' => 'rotate-1'),
+		array('flaticon-row' => 'row'),
+		array('flaticon-ruler' => 'ruler'),
+		array('flaticon-ruler-1' => 'ruler-1'),
+		array('flaticon-scale' => 'scale'),
+		array('flaticon-select' => 'select'),
+		array('flaticon-sent' => 'sent'),
+		array('flaticon-sent-1' => 'sent-1'),
+		array('flaticon-shapes' => 'shapes'),
+		array('flaticon-shapes-1' => 'shapes-1'),
+		array('flaticon-spiral' => 'spiral'),
+		array('flaticon-spray' => 'spray'),
+		array('flaticon-square' => 'square'),
+		array('flaticon-square-1' => 'square-1'),
+		array('flaticon-square-10' => 'square-10'),
+		array('flaticon-square-11' => 'square-11'),
+		array('flaticon-square-12' => 'square-12'),
+		array('flaticon-square-13' => 'square-13'),
+		array('flaticon-square-14' => 'square-14'),
+		array('flaticon-square-15' => 'square-15'),
+		array('flaticon-square-16' => 'square-16'),
+		array('flaticon-square-17' => 'square-17'),
+		array('flaticon-square-18' => 'square-18'),
+		array('flaticon-square-19' => 'square-19'),
+		array('flaticon-square-2' => 'square-2'),
+		array('flaticon-square-20' => 'square-20'),
+		array('flaticon-square-21' => 'square-21'),
+		array('flaticon-square-22' => 'square-22'),
+		array('flaticon-square-23' => 'square-23'),
+		array('flaticon-square-24' => 'square-24'),
+		array('flaticon-square-25' => 'square-25'),
+		array('flaticon-square-26' => 'square-26'),
+		array('flaticon-square-27' => 'square-27'),
+		array('flaticon-square-3' => 'square-3'),
+		array('flaticon-square-4' => 'square-4'),
+		array('flaticon-square-5' => 'square-5'),
+		array('flaticon-square-6' => 'square-6'),
+		array('flaticon-square-7' => 'square-7'),
+		array('flaticon-square-8' => 'square-8'),
+		array('flaticon-square-9' => 'square-9'),
+		array('flaticon-tile' => 'tile'),
+		array('flaticon-tile-1' => 'tile-1'),
+		array('flaticon-transform' => 'transform'),
+		array('flaticon-triangle' => 'triangle'),
+		array('flaticon-triangle-1' => 'triangle-1'),
+		array('flaticon-trim' => 'trim'),
+		array('flaticon-unconstrained' => 'unconstrained'),
+		array('flaticon-ungroup' => 'ungroup'),
+		array('flaticon-unite' => 'unite'),
+		array('flaticon-vector' => 'vector'),
+		array('flaticon-vector-1' => 'vector-1'),
+		array('flaticon-vector-2' => 'vector-2'),
+		array('flaticon-vector-3' => 'vector-3'),
+		array('flaticon-vertical-alignment' => 'vertical-alignment'),
+		array('flaticon-vertical-alignment-1' => 'vertical-alignment-1'),
+		array('flaticon-vertical-alignment-2' => 'vertical-alignment-2'),
+		array('flaticon-vertical-alignment-3' => 'vertical-alignment-3'),
+		array('flaticon-vertical-alignment-4' => 'vertical-alignment-4'),
+		array('flaticon-vertical-alignment-5' => 'vertical-alignment-5'),
+		array('flaticon-vertical-alignment-6' => 'vertical-alignment-6'),
+		);
+	}
+	add_filter( 'vc_iconpicker-type-flaticon', 'bon_flaticonicon_array' );
+
+	/**  Register Backend and Frontend CSS Styles */
+	add_action( 'vc_base_register_front_css', 'bon_vc_iconpicker_base_register_css' );
+	add_action( 'vc_base_register_admin_css', 'bon_vc_iconpicker_base_register_css' );
+	function bon_vc_iconpicker_base_register_css(){
+	    wp_register_style('ionicons', get_stylesheet_directory_uri() . '/css/ionicons.min.css');
+	    wp_register_style('flaticon', get_stylesheet_directory_uri() . '/css/flaticon/flaticon.css');
+	}
+
+	/** Enqueue Backend and Frontend CSS Styles  */
+	add_action( 'vc_backend_editor_enqueue_js_css', 'bon_vc_iconpicker_editor_jscss' );
+	add_action( 'vc_frontend_editor_enqueue_js_css', 'bon_vc_iconpicker_editor_jscss' );
+	function bon_vc_iconpicker_editor_jscss(){
+	    wp_enqueue_style( 'ionicons' );
+	    wp_enqueue_style( 'flaticon' );
+	}
+
+	/**  Enqueue CSS in Frontend when it's used  */
+	add_action('vc_enqueue_font_icon_element', 'bon_enqueue_font_ionicons');
+	function bon_enqueue_font_ionicons($font){
+	    switch ( $font ) {
+      case 'ionicons':
+			wp_enqueue_style( 'ionicons' );
+			break;
+			case 'flaticon':
+			wp_enqueue_style( 'flaticon' );
+	    }
+	}
